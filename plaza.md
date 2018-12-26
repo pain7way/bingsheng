@@ -1,4 +1,4 @@
-| ID | PLAZANAME | STREETNAME | PLAZALEVEL | COMPANYNAME  |
+| PLAZA_ID | PLAZANAME | STREETNAME | PLAZALEVEL | COMPANYNAME  |
 | ----- | ----- | ----- | ----- | -----  |
 | 1000283 | 银川金凤万达广场 | 金凤区正源北街22号 | B | 银川区域商管公司  |
 | 1000286 | 武汉中央文化区楚河汉街 | 武昌区中北路楚河汉街 | A | 武汉区域商管公司  |
