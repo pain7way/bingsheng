@@ -56,6 +56,7 @@ src_qf_prod_coupon.coupon_store_rule
     max(op_time) op_time_max from src_qf_prod_coupon.coupon_store_rule;
 
 
+
 src_qf_prod_coupon.coupon_stock
 ------------------
     select count(*) from src_qf_prod_coupon.coupon_stock;
