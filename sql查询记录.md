@@ -47,7 +47,7 @@ src_basedata.base_store（通过门店id找到门店信息）
     select store_id,store_name,plaza_id,plaza_name from src_basedata.base_store where plaza_id=1000771;
     select store_id,store_name,plaza_id,plaza_name from src_basedata.base_store where store_id=100007644;
     select store_id,store_name,plaza_id,plaza_name from src_basedata.base_store where store_id=100002072;
-    select store_id,store_name,plaza_id,plaza_name from src_basedata.base_store where store_id=100004161;
+    select store_id,store_name,plaza_id,plaza_name from src_basedata.base_store where store_id=100010747;
 
 
 
@@ -70,6 +70,7 @@ src_mall.product（5位数的券id转化为9位数的券id）
     select min(dt) dt_min,max(dt) dt_max,min(op_time) op_time_min,max(op_time) op_time_max from src_mall.product;
     
     select spu_code,id from src_mall.product where id=29269;
+    select spu_code,id from src_mall.product where spu_code=190130490;
 
 
 src_qf_prod_coupon.coupon_store_rule(通过券id找到门店id，只是9位数的券id)
@@ -81,7 +82,7 @@ src_qf_prod_coupon.coupon_store_rule(通过券id找到门店id，只是9位数�
     min(op_time) op_time_min,
     max(op_time) op_time_max from src_qf_prod_coupon.coupon_store_rule;
     
-    select csr_store_id,c_no from src_qf_prod_coupon.coupon_store_rule where c_no=184520514;
+    select csr_store_id,c_no from src_qf_prod_coupon.coupon_store_rule where c_no=190130490;
 
 
 
