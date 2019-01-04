@@ -15,22 +15,13 @@ src_qianfan.wechat_mini_program_log
     select min(dt) dt_min,max(dt) dt_max from src_qianfan.wechat_mini_program_log;
 
 
-src_qf_prod_coupon.coupon
-------------------
-    select count(*) from src_qf_prod_coupon.coupon;
-    select min(dt),max(dt),min(op_time),max(op_time) from src_qf_prod_coupon.coupon;
-
-
-src_mall.product
-------------------
-    select count(*) from src_mall.product;
-    select min(dt) dt_min,max(dt) dt_max,min(op_time) op_time_min,max(op_time) op_time_max from src_mall.product;
-
-
-
 src_basedata.base_store
 ------------------
-    select min(dt) dt_min,max(dt) dt_max,min(op_time) op_time_min,max(op_time) op_time_max from src_basedata.base_store;
+    select min(dt) dt_min,
+    max(dt) dt_max,
+    min(op_time) op_time_min,
+    max(op_time) op_time_max 
+    from src_basedata.base_store;
 
     select store_id,
     store_name,
@@ -41,9 +32,32 @@ src_basedata.base_store
     
     select plaza_id,plaza_name from src_basedata.base_store where plaza_name like '北京%';
     select distinct plaza_id from src_basedata.base_store;
-
     select store_id,store_name,plaza_id,plaza_name from src_basedata.store where plaza_id=1001145;
     select store_id,store_name,plaza_id,plaza_name from src_basedata.store where store_id=100007644;
+
+
+
+src_qf_prod_coupon.coupon
+------------------
+    select count(*) from src_qf_prod_coupon.coupon;
+    
+    select min(dt) min_dt,
+    max(dt) max_dt,
+    min(op_time) min_optime,
+    max(op_time) max_optime 
+    from src_qf_prod_coupon.coupon;
+
+
+
+src_mall.product
+------------------
+    select count(*) from src_mall.product;
+    
+    select min(dt) dt_min,
+    max(dt) dt_max,
+    min(op_time) op_time_min,
+    max(op_time) op_time_max 
+    from src_mall.product;
 
 
 src_qf_prod_coupon.coupon_store_rule
@@ -65,9 +79,6 @@ src_qf_prod_coupon.coupon_stock
     max(dt) dt_max,
     min(op_time) op_time_min,
     max(op_time) op_time_max from src_qf_prod_coupon.coupon_stock;
-
-
-
 
 
 
