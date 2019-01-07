@@ -25,6 +25,8 @@ src_qianfan.wechat_mini_program_log
     select min(dt) dt_min,max(dt) dt_max from src_qianfan.wechat_mini_program_log;
     select distinct coupon_id from src_qianfan.wechat_mini_program_log where coupon_id is not null limit 50;
     select min(dt),max(dt) from src_qianfan.wechat_mini_program_log where coupon_id=063005385396;
+    select dt,count(*) from src_qianfan.wechat_mini_program_log where plaza_id=1102588 and dt like '2019-01-%' group by dt;
+    select dt,count(*) from src_qianfan.wechat_mini_program_log where plaza_id=1102588 and dt like '2018-12-%' group by dt;
 
 
 src_basedata.base_store（通过门店id找到门店信息）
