@@ -1,4 +1,4 @@
-app_compass.baseinfo_goods
+app_compass.baseinfo_goods(券的基本情况)
 ------------------
     select count(*) from app_compass.baseinfo_goods;
     select min(now_date),max(now_date),min(op_time),max(op_time) from app_compass.baseinfo_goods;
@@ -14,7 +14,7 @@ app_compass.baseinfo_goods
     from app_compass.baseinfo_goods where coupon_id=31180;
 
 
-src_qianfan.wechat_mini_program_log
+src_qianfan.wechat_mini_program_log(用户行为)
 ------------------
     select count(*) from src_qianfan.wechat_mini_program_log;
     select count(*) from src_qianfan.wechat_mini_program_log where plaza_id=1000772 and dt='2019-01-02';
@@ -42,7 +42,14 @@ src_basedata.base_store（通过门店id找到门店信息）
     plaza_id,
     plaza_name,
     business_id,
-    business_name from src_basedata.base_store where plaza_id=1105288;
+    business_name,dt from src_basedata.base_store where plaza_id=1102588;
+    
+    select store_id,
+    store_name,
+    plaza_id,
+    plaza_name,
+    business_id,
+    business_name,dt from src_basedata.base_store where plaza_id=1102588 order by dt;
     
     select plaza_id,plaza_name from src_basedata.base_store where plaza_name like '北京%';
     select distinct plaza_id from src_basedata.base_store;
@@ -68,9 +75,7 @@ src_qf_prod_coupon.coupon（获取券的描述信息，只是9位数的券）
 src_mall.product（5位数的券id转化为9位数的券id）
 ------------------
     select count(*) from src_mall.product;
-    
     select min(dt) dt_min,max(dt) dt_max,min(op_time) op_time_min,max(op_time) op_time_max from src_mall.product;
-    
     select spu_code,id from src_mall.product where id=29269;
     select spu_code,id from src_mall.product where spu_code=190130490;
 
