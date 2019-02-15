@@ -27,8 +27,8 @@ item
 | cs_stock_num | 可用数 | src_qf_prod_coupon | src_qf_prod_coupon.coupon_stock | -----  |
 | csr_store_id | 门店id | src_basedata | src_basedata.base_store | -----  |
 | store_name | 门店名 | src_basedata | src_basedata.base_store | -----  |
-| business_name | 业态名 | src_basedata | src_basedata.base_store | -----  
-| business_id | 业态id | src_basedata | src_basedata.base_store | -----  
+| business_name | 业态名 | src_basedata | src_basedata.base_store | -----  |
+| business_id | 业态id | src_basedata | src_basedata.base_store | -----  |
 | now_date | 时间 | app_compass | app_compass.baseinfo_goods | ----- |
 
 
