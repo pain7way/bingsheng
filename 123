@@ -5,13 +5,13 @@ item
 | 参数名称 | 备注 | 库 | 表 | 特征  |
 | ----- | ----- | ----- | ----- | -----  |
 | couponid | 物料id物料唯一标识 | app_compass | app_compass.baseinfo_goods | -----  |
+
 | coupon_title | 券名称 | app_compass | app_compass.baseinfo_goods | -----  |
 | scheme_type | 券细分类型(如代金券、兑换券、停车券等) | app_compass | app_compass.baseinfo_goods | -----  |
 | plaza_id | 广场id | app_compass | app_compass.baseinfo_goods | -----  |
 | plaza_name | 广场名 | src_basedata | src_basedata.base_store | -----  |
 | coupon_type | 券类型 | app_compass | app_compass.baseinfo_goods | -----  |
 | sale_price | 券售价 | app_compass | app_compass.baseinfo_goods | -----  |
-
 | face_value | 券面额 | app_compass | app_compass.baseinfo_goods | -----  |
 | show_begin_time | 投放开始时间 | app_compass | app_compass.baseinfo_goods | -----  |
 | show_end_time | 投放结束时间 | app_compass | app_compass.baseinfo_goods | -----  |
