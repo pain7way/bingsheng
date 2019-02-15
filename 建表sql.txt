@@ -1,0 +1,100 @@
+select A.coupon_id couponid,
+       A.coupon_title coupon_title,
+       A.scheme_type scheme_type,
+       A.plaza_id plaza_id,
+       D.plaza_name plaza_name,
+       A.coupon_type coupon_type,
+       A.sale_price sale_price,
+       A.face_value face_value,
+       A.show_begin_time show_begin_time,
+       A.show_end_time show_end_time,
+       A.coupon_channel coupon_channel,
+       A.coupon_channel_id coupon_channel_id,
+       E.c_type c_type,
+       E.c_title c_title,
+       E.c_subtitle c_subtitle,    
+       E.c_person_each_limit c_person_each_limit,
+       E.c_person_daily_each_limit c_person_daily_each_limit,
+       E.c_use_period c_use_period,
+       E.c_use_rule c_use_rule,
+       E.c_expired_after_hours c_expired_after_hours,
+       B.cs_stock_num cs_stock_num,
+       C.csr_store_id csr_store_id, 
+       D.store_name store_name,
+       D.business_name business_name,
+       D.business_id business_id,
+       A.now_date now_date
+from
+     (select goods.coupon_id coupon_id,
+             goods.coupon_title coupon_title,
+             goods.plaza_id plaza_id,
+             goods.coupon_type coupon_type,
+             goods.sale_price sale_price,
+             goods.face_value face_value,
+             goods.show_begin_time show_begin_time,
+             goods.show_end_time show_end_time,
+             goods.coupon_channel coupon_channel,
+             goods.coupon_channel_id coupon_channel_id,
+             goods.now_date now_date,
+             product.spu_code spu_code
+     from
+         (select coupon_id,coupon_title,plaza_id,coupon_type,sale_price,face_value,show_begin_time,show_end_time,coupon_channel,coupon_channel_id,now_date from app_compass.baseinfo_goods where plaza_id=1000772 and coupon_channel in('券列表','限时抢购','风味限时抢') and show_end_time>='2019-02-13' and length(coupon_id)=5) as goods
+    left join
+          (select id,spu_code from src_mall.product) as product on goods.coupon_id=product.id) as A
+left join src_qf_prod_coupon.coupon_stock as B on A.spu_code=B.c_no
+left join src_qf_prod_coupon.coupon_store_rule as C on A.spu_code=C.c_no
+left join src_basedata.base_store as D on D.store_id=C.csr_store_id
+left join src_qf_prod_coupon.coupon as E on A.spu_code=E.c_no
+
+union all
+
+select A.coupon_id couponid,
+       A.coupon_title coupon_title,
+       A.scheme_type scheme_type,
+       A.plaza_id plaza_id,
+       D.plaza_name plaza_name,
+       A.coupon_type coupon_type,
+       A.sale_price sale_price,
+       A.face_value face_value,
+       A.show_begin_time show_begin_time,
+       A.show_end_time show_end_time,
+       A.coupon_channel coupon_channel,
+       A.coupon_channel_id coupon_channel_id,
+       E.c_type c_type,
+       E.c_title c_title,
+       E.c_subtitle c_subtitle,    
+       E.c_person_each_limit c_person_each_limit,
+       E.c_person_daily_each_limit c_person_daily_each_limit,
+       E.c_use_period c_use_period,
+       E.c_use_rule c_use_rule,
+       E.c_expired_after_hours c_expired_after_hours,
+       B.cs_stock_num cs_stock_num,
+       C.csr_store_id csr_store_id, 
+       D.store_name store_name,
+       D.business_name business_name,
+       D.business_id business_id,
+       A.now_date now_date
+from
+(select coupon_id,coupon_title,plaza_id,coupon_type,sale_price,face_value,show_begin_time,show_end_time,coupon_channel,coupon_channel_id,now_date from app_compass.baseinfo_goods where plaza_id=1000772 and coupon_channel in('券列表','限时抢购','风味限时抢') and show_end_time>='2019-02-13' and length(coupon_id)!=5) as A
+left join src_qf_prod_coupon.coupon_stock as B on A.coupon_id=B.c_no
+left join src_qf_prod_coupon.coupon_store_rule as C on A.coupon_id=C.c_no
+left join src_basedata.base_store as D on D.store_id=C.csr_store_id
+left join src_qf_prod_coupon.coupon as E on A.coupon_id=E.c_no;
+
+
+
+select A.distinct_id distinct_id,
+       A.mobile mobile,
+       A.event event,
+       A.recv_time recv_time,
+       A.coupon_id coupon_id,
+       A.dt dt,
+       B.plaza_id plaza_id,
+       C.plaza_name plaza_name
+from
+(select distinct_id,mobile,event,recv_time,coupon_id,dt from src_qianfan.wechat_mini_program_log where dt='2019-02-13') as A 
+left join app_compass.baseinfo_goods as B on A.coupon_id=B.coupon_id
+left join src_basedata.base_plaza as C on B.plaza_id=C.plaza_id;
+
+
+
