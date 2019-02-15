@@ -1,0 +1,63 @@
+-----
+
+item  
+=====
+| 参数名称 | 备注 | 库 | 表 | 特征  |
+| ----- | ----- | ----- | ----- | -----  |
+| couponid | 物料id物料唯一标识 | app_compass | app_compass.baseinfo_goods | -----  |
+| coupon_title | 券名称 | app_compass | app_compass.baseinfo_goods | -----  |
+| scheme_type | 券细分类型(如代金券、兑换券、停车券等) | app_compass | app_compass.baseinfo_goods | -----  |
+| plaza_id | 广场id | app_compass | app_compass.baseinfo_goods | -----  |
+| plaza_name | 广场名 | src_basedata | src_basedata.base_store | -----  |
+| coupon_type | 券类型 | app_compass | app_compass.baseinfo_goods | -----  |
+| sale_price | 券售价 | app_compass | app_compass.baseinfo_goods | -----  |
+| face_value | 券面额 | app_compass | app_compass.baseinfo_goods | -----  |
+| show_begin_time | 投放开始时间 | app_compass | app_compass.baseinfo_goods | -----  |
+| show_end_time | 投放结束时间 | app_compass | app_compass.baseinfo_goods | -----  |
+| coupon_channel | 投放渠道 | app_compass | app_compass.baseinfo_goods | -----  |
+| coupon_channel_id | 投放渠道id | app_compass | app_compass.baseinfo_goods | -----  |
+| c_type | 券类型(1:代金券 2:礼品券 3:折扣券 4:停车券) | src_qf_prod_coupon | src_qf_prod_coupon.coupon | -----  |
+| c_title | 券名称 | src_qf_prod_coupon | src_qf_prod_coupon.coupon | -----  |
+| c_subtitle | 券副标题 | src_qf_prod_coupon | src_qf_prod_coupon.coupon | -----  |
+| c_person_each_limit | 每人限领,0不限制 | src_qf_prod_coupon | src_qf_prod_coupon.coupon | -----  |
+| c_person_daily_each_limit | 每人每日限领,0不限制 | src_qf_prod_coupon | src_qf_prod_coupon.coupon | -----  |
+| c_use_period | 使用有效期（1固定，2活动） | src_qf_prod_coupon | src_qf_prod_coupon.coupon | -----  |
+| c_use_rule | 满多少使用(分),0不限制 | src_qf_prod_coupon | src_qf_prod_coupon.coupon | -----  |
+| c_expired_after_hours | 自领取多少小时内有效 | src_qf_prod_coupon | src_qf_prod_coupon.coupon | -----  |
+| cs_stock_num | 可用数 | src_qf_prod_coupon | src_qf_prod_coupon.coupon_stock | -----  |
+| csr_store_id | 门店id | src_basedata | src_basedata.base_store | -----  |
+| store_name | 门店名 | src_basedata | src_basedata.base_store | -----  |
+| business_name | 业态名 | src_basedata | src_basedata.base_store | -----  
+| business_id | 业态id | src_basedata | src_basedata.base_store | -----  
+| now_date | 时间 | app_compass | app_compass.baseinfo_goods | ----- |
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
