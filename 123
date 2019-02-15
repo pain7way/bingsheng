@@ -11,6 +11,7 @@ item
 | plaza_name | 广场名 | src_basedata | src_basedata.base_store | -----  |
 | coupon_type | 券类型 | app_compass | app_compass.baseinfo_goods | -----  |
 | sale_price | 券售价 | app_compass | app_compass.baseinfo_goods | -----  |
+
 | face_value | 券面额 | app_compass | app_compass.baseinfo_goods | -----  |
 | show_begin_time | 投放开始时间 | app_compass | app_compass.baseinfo_goods | -----  |
 | show_end_time | 投放结束时间 | app_compass | app_compass.baseinfo_goods | -----  |
